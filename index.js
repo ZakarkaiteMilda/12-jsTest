@@ -208,3 +208,59 @@ function telefonoNumeris(masyvas) {
 }
 console.log(telefonoNumeris([8, 6, 0, 7, 9, 3, 6, 0, 1, 0]));
 
+console.clear();
+console.log(`------------------------`);
+
+//8. Parašyti funkciją - lygineSuma. Funkcijos parametrai - du kintamieji.
+
+//Testų reikalavimai - abu kitamieji turi būti arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas).
+//Jei kintamieji skaičiai, grąžinti skaičių sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą. 
+//Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė - grąžinti tekstą, kad suma nelyginė. (10 taškų)
+
+
+
+function lygineSuma(param1, param2) {
+    let atsakymas = ``;
+    let tinkamiParametrai = false;
+
+
+    if (typeof param1 !== typeof param2) {
+        atsakymas = "Funkcijos parametrai turi skirtingus tipus.";
+    } else if (typeof param1 === "number" || Array.isArray(param1)) {
+        atsakymas = "Funkcijos parametrai yra skaičiai arba masyvai";
+        tinkamiParametrai = true;
+        console.log(tinkamiParametrai);
+        let sumaSkaiciu = 0;
+
+        if (typeof param1 === "number") {
+            sumaSkaiciu = param1 + param2;
+            if (sumaSkaiciu % 2 === 0) {
+                return `Parametru suma ${sumaSkaiciu} yra lyginė`;
+            } else {
+
+            }
+        } else {
+            return `Parametru suma ${sumaSkaiciu} yra nelyginė`;
+        }
+
+
+        if (Array.isArray(param1)) {
+            const sumaMasyvoIlgiu = param1.length + param2.length;
+            if (sumaMasyvoIlgiu % 2 === 0) {
+                return `Parametru suma ${sumaMasyvoIlgiu} yra lyginė`;
+
+            } else {
+                return `Parametru suma ${sumaMasyvoIlgiu} yra nelyginė`;
+            }
+
+        } else {
+            atsakymas = "Funkcijos parametrai nera skaičiai arba masyvai";
+            console.log(tinkamiParametrai);
+        }
+        console.log(typeof param1);
+        return atsakymas;
+    }
+
+}
+console.log(lygineSuma(2, 1));
+
