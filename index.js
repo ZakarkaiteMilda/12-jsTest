@@ -175,3 +175,36 @@ function pirminisSkaicius(skaicius) {
 
 console.log(pirminisSkaicius(1));
 
+ console.clear();
+ console.log(`------------------------`);
+//10. Parašyti funkciją telefonoNumeris. Funkcija turi priimti vieną kintamąjį - masyvą. 
+// Masyvo elementai - skaičiai, ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - 
+//"(XXX) XXX-XXXX". (10 taškų)
+
+
+function telefonoNumeris(masyvas) {
+    let atsakymas = ``;
+
+
+    if (!Array.isArray(masyvas)) {
+        atsakymas = 'Kintamasis nėra masyvas.';
+    } else if (masyvas.length !== 10) {
+        atsakymas = "Masyvo elementų skičius nėra 10";
+    } else {
+
+        const arVisiSkaiciai = masyvas.every(function (element) {
+            return typeof element === "number";
+        });
+
+        if (arVisiSkaiciai) {
+            atsakymas = `(${masyvas[0]}${masyvas[1]}${masyvas[2]}) ${masyvas[3]}${masyvas[4]}${masyvas[5]}-${masyvas[6]}${masyvas[7]}${masyvas[8]}${masyvas[9]}`;
+
+        } else {
+            atsakymas = "Masyvo elementai nėra visi skaičiai.";
+        }
+
+    }
+    return atsakymas;
+}
+console.log(telefonoNumeris([8, 6, 0, 7, 9, 3, 6, 0, 1, 0]));
+
