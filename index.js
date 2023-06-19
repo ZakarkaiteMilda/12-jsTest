@@ -56,3 +56,33 @@ while (true) {
         break;
     }
 }
+
+ console.clear();
+ console.log(`------------------------`);
+//6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30.
+// Surasti didžiausią masyvo reikšmę,
+// NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
+
+ let = array = [];
+
+ const arrayLenght = Math.floor(Math.random() * (30 - 20 + 1) + 20);
+
+ console.log(arrayLenght);
+
+ for (let i = 0; i < arrayLenght; i++) {
+     array.push(Math.floor(Math.random() * (30 - 10 + 1) + 10)); 
+ }
+
+ console.log(array);
+
+
+
+ let maxValue = 0;
+
+ for (let i = 0; i < array.length; i++) {
+    
+     if (array [i] > maxValue ) {
+         maxValue = array [i];
+     }    
+ }
+ console.log(maxValue);
